@@ -3,121 +3,150 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Mi Historia de Amor con Racel</title>
+  <title>Nuestra Gran Historia de Amor</title>
   <style>
     body {
-      font-family: 'Arial', sans-serif;
-      background-color: #f0e6ff; /* Fondo lila suave */
-      color: #4b0082; /* Color de texto morado oscuro */
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f9;
+      color: #333;
       margin: 0;
       padding: 0;
     }
     header {
-      background-color: #8a2be2; /* Morado intenso */
+      background-color: #6a4c9c;
       color: white;
       text-align: center;
       padding: 20px;
     }
-    .tabs {
+    nav {
       display: flex;
       justify-content: center;
-      margin-top: 20px;
-      background-color: #9b59b6; /* Morado más suave */
+      background-color: #6a4c9c;
     }
-    .tab {
-      padding: 12px 25px;
-      cursor: pointer;
-      background-color: #fff;
-      color: #9b59b6;
-      border: none;
-      margin: 5px;
-      border-radius: 5px;
+    nav a {
+      color: white;
+      padding: 14px 20px;
+      text-decoration: none;
+      text-align: center;
     }
-    .tab:hover {
-      background-color: #b39ddb; /* Morado claro */
+    nav a:hover {
+      background-color: #5a3b8f;
     }
-    .content {
-      display: none;
-      margin-top: 20px;
+    section {
       padding: 20px;
+      margin: 20px;
       background-color: #fff;
-      margin: 0 10px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+    .titulo {
+      font-size: 24px;
+      color: #6a4c9c;
+    }
+    .textos {
+      font-size: 18px;
+      line-height: 1.6;
+      color: #555;
+    }
+    .fotitos img {
+      width: 100%;
+      max-width: 300px;
+      margin: 10px;
       border-radius: 8px;
     }
-    .active-tab {
-      background-color: #9b59b6;
-      color: white;
+    .eres p {
+      font-size: 22px;
+      font-weight: bold;
+      margin: 5px;
+      text-align: center;
     }
-    .active-content {
+    .eres p:nth-child(odd) {
+      color: #6a4c9c;
+    }
+    .eres p:nth-child(even) {
+      color: #9b7dbf;
+    }
+    .mensaje-oculto {
+      display: none;
+      background-color: #6a4c9c;
+      color: white;
+      padding: 20px;
+      margin-top: 20px;
+      border-radius: 8px;
+    }
+    .mensaje-oculto.correcto {
       display: block;
     }
-    h2 {
-      color: #8a2be2; /* Títulos morado claro */
-    }
-    p {
-      line-height: 1.6;
+    video {
+      width: 100%;
+      max-width: 400px;
+      border-radius: 8px;
+      margin-top: 20px;
     }
   </style>
 </head>
 <body>
 
 <header>
-  <h1>Mi Historia de Amor con Racel</h1>
-  <p>Un viaje único de amor que nunca termina</p>
+  <h1>UN DETALLE PARA EL AMOR DE MI VIDA</h1>
 </header>
 
-<div class="tabs">
-  <button class="tab active-tab" onclick="showContent('firstDate')">15 de Julio 2015</button>
-  <button class="tab" onclick="showContent('secondDate')">17 de Septiembre 2015</button>
-  <button class="tab" onclick="showContent('thirdDate')">6 de Julio 2024</button>
-  <button class="tab" onclick="showContent('fourthDate')">29 de Septiembre 2024</button>
-</div>
+<nav>
+  <a href="#bienvenida">Bienvenida</a>
+  <a href="#15julio2015">15 de Julio 2015</a>
+  <a href="#17septiembre2015">17 de Septiembre 2015</a>
+  <a href="#6julio2024">6 de Julio 2024</a>
+  <a href="#29septiembre2024">29 de Septiembre 2024</a>
+  <a href="#fotitos">Fotitos Nuestras</a>
+  <a href="#eres">ERES</a>
+  <a href="#escucha">Escucha</a>
+  <a href="#mensajeoculto">Mensaje Oculto</a>
+  <a href="#sorpresa">Sorpresa</a>
+</nav>
 
-<div id="firstDate" class="content active-content">
-  <h2>15 de Julio 2015</h2>
-  <p>Este día marcó un antes y un después. Fue la primera vez que vi a Racel, y aunque no lo sabía en ese momento, su presencia cambiaría mi vida para siempre. Ese día, todo se sintió diferente, algo en el aire me decía que el destino nos había reunido. Las palabras que aún me resuenan en el corazón, sus miradas, su sonrisa, todo era perfecto.</p>
-  <p>Recuerdo ese momento como si fuera ayer, la primera vez que nuestras miradas se cruzaron. ¡Qué mágico fue! El inicio de una historia que jamás imaginé, pero que me ha hecho más feliz de lo que nunca pensé posible. Te quiero, Racel.</p>
-</div>
+<section id="bienvenida">
+  <h2 class="titulo">Bienvenida</h2>
+  <p class="textos">Bienvenida a nuestra historia de amor, un viaje lleno de recuerdos, risas, y sobre todo, mucho amor. ¡Espero que disfrutes cada momento de esta página tanto como yo disfruto de ti!</p>
+</section>
 
-<div id="secondDate" class="content">
-  <h2>17 de Septiembre 2015</h2>
-  <img src="https://raw.githubusercontent.com/bleis3/Nuestra-historia-de-amor/main/IMG-20241006-WA0002.jpg" alt="17 de Septiembre 2015 - Aceptación de ser novios" style="width: 100%; max-width: 600px; border-radius: 10px;">
-  <p>Este fue el día en que mi corazón dio un salto. Racel aceptó ser mi novia, pero lo hizo de una manera tan especial. Sus palabras fueron: *"Si de verdad me quieres, podemos intentar algo."* Esas palabras quedaron grabadas en mi memoria y mi corazón. Fue un momento de incertidumbre, pero también de esperanza, un inicio lleno de ilusión. A partir de ese día, todo cambió para nosotros. Yo supe en ese momento que quería pasar el resto de mi vida a su lado.</p>
-  <p>Desde entonces, hemos compartido momentos increíbles, y aunque el tiempo pasó, siempre supe que este amor era para siempre. Te amo más de lo que las palabras pueden expresar, Racel.</p>
-</div>
+<section id="15julio2015">
+  <h2 class="titulo">15 de Julio 2015</h2>
+  <p class="textos">Lo recuerdo como si fuera ayer, esa sonrisa hermosa, pantalón cafés, tenis negros, una maleta de 125 libras y tu mami amenazándonos. Ese día marcó un antes y un después para mí, no sabía ni lo que era amar o enamorarse, pero ahí sentí que ese día había llegado lo que muchos llaman amor. Fue la primera vez que supe que existías, era como si la perfección se plantara frente a mí, y aunque no lo sabía en ese momento, tu presencia cambiaría mi vida para siempre...</p>
+  <img src="https://raw.githubusercontent.com/bleis3/Nuestra-historia-de-amor/main/11111.png" alt="Foto 15 de Julio 2015">
+</section>
 
-<div id="thirdDate" class="content">
-  <h2>6 de Julio 2024</h2>
-  <img src="https://raw.githubusercontent.com/bleis3/Nuestra-historia-de-amor/main/11111.png" alt="6 de Julio 2024 - Primer reencuentro después de muchos años" style="width: 100%; max-width: 600px; border-radius: 10px;">
-  <p>Después de muchos años sin hablarnos, el destino nos dio una nueva oportunidad. Este fue el día en que, por fin, volvimos a hablar. El reencuentro fue emocionante y lleno de sentimientos encontrados. Mi corazón latía con fuerza, al ver que el amor que compartimos no se había ido. ¡Cómo me emocioné al escuchar su voz nuevamente! Fue el inicio de una nueva etapa, una nueva oportunidad para escribir nuestra historia.</p>
-  <p>Este día nos permitió revivir aquellos hermosos momentos que compartimos en el pasado. Volvimos a encontrarnos, a mirarnos a los ojos y a redescubrir lo que siempre estuvo allí. Volver a hablar con Racel fue el mejor regalo que pude haber recibido. Estoy agradecido por cada segundo de este nuevo capítulo.</p>
-</div>
+<section id="17septiembre2015">
+  <h2 class="titulo">17 de Septiembre 2015</h2>
+  <p class="textos">Aquel día lo recuerdo como si fuera ayer también. Recuerdo haber estado en la casa de mi abuelo cenando... "Si de verdad me quieres, podemos intentar algo". Recuerdo haber regresado a cenar todo feliz sabiendo que lo que había esperado se hacía realidad, por fin la señorita Racel Mazariegos futura de González era mi novia...</p>
+  <img src="https://raw.githubusercontent.com/bleis3/Nuestra-historia-de-amor/main/IMG-20241006-WA0002.jpg" alt="Foto 17 de Septiembre 2015">
+</section>
 
-<div id="fourthDate" class="content">
-  <h2>29 de Septiembre 2024</h2>
-  <img src="https://raw.githubusercontent.com/bleis3/Nuestra-historia-de-amor/main/Imagen%20de%20WhatsApp%202024-11-27%20a%20las%2013.48.06_4d77f6fc.jpg" alt="29 de Septiembre 2024 - Comenzamos de nuevo nuestra relación" style="width: 100%; max-width: 600px; border-radius: 10px;">
-  <p>Este día significó una nueva oportunidad para nosotros. Decidimos comenzar nuevamente nuestra relación, esta vez con más madurez y con el compromiso de que nada nos separaría. Volvimos a ser novios, pero esta vez con la seguridad de que este amor es más fuerte que nunca.</p>
-  <p>A veces, la vida nos da segundas oportunidades, y este fue nuestro caso. Estoy feliz de haber decidido caminar nuevamente a su lado, Racel. Gracias por darme una nueva oportunidad para demostrarte cuánto te amo. Juntos, podemos enfrentar cualquier desafío, porque el amor que tenemos es inquebrantable.</p>
-</div>
+<section id="6julio2024">
+  <h2 class="titulo">6 de Julio 2024</h2>
+  <p class="textos">Vaya caprichoso que es el destino y vaya ingenuo fui yo, cuántas historias más tendríamos si no hubiera esperado tanto. Ese día yo estaba más nervioso que nunca, pero igual de feliz al verte, sabes, no tienes idea de lo mucho que te quiero...</p>
+  <img src="https://raw.githubusercontent.com/bleis3/Nuestra-historia-de-amor/main/captura%206%20de%20julio%20.jpg" alt="Foto 6 de Julio 2024">
+</section>
 
-<script>
-  function showContent(date) {
-    const contents = document.querySelectorAll('.content');
-    const tabs = document.querySelectorAll('.tab');
+<section id="29septiembre2024">
+  <h2 class="titulo">29 de Septiembre 2024</h2>
+  <p class="textos">Vaya día aquel no... Creo que se ha hecho de mis días favoritos. No sabes cuántos días pensé en cómo llegar, qué decir, qué hacer. Estabas igual de hermosa que siempre... Fue la primera vez que salíamos solos, la primera vez que te besaba...</p>
+</section>
 
-    contents.forEach(content => {
-      content.classList.remove('active-content');
-    });
+<section id="fotitos">
+  <h2 class="titulo">Fotitos nuestras</h2>
+  <div class="fotitos">
+    <img src="https://raw.githubusercontent.com/bleis3/Nuestra-historia-de-amor/main/fotos%201.jpg" alt="Foto 1">
+    <img src="https://raw.githubusercontent.com/bleis3/Nuestra-historia-de-amor/main/fotos%202.jpg" alt="Foto 2">
+    <img src="https://raw.githubusercontent.com/bleis3/Nuestra-historia-de-amor/main/fotos%203.jpg" alt="Foto 3">
+    <img src="https://raw.githubusercontent.com/bleis3/Nuestra-historia-de-amor/main/fotos%204.jpg" alt="Foto 4">
+    <img src="https://raw.githubusercontent.com/bleis3/Nuestra-historia-de-amor/main/fotos%205.jpg" alt="Foto 5">
+    <img src="https://raw.githubusercontent.com/bleis3/Nuestra-historia-de-amor/main/fotos%207.jpg" alt="Foto 6">
+    <video controls>
+      <source src="https://raw.githubusercontent.com/bleis3/Nuestra-historia-de-amor/main/fotos%209.mp4" type="video/mp4">
+      Tu navegador no soporta este formato de video.
+    </video>
+  </div>
+</section>
 
-    tabs.forEach(tab => {
-      tab.classList.remove('active-tab');
-    });
-
-    document.getElementById(date).classList.add('active-content');
-    const activeTab = Array.from(tabs).find(tab => tab.innerHTML === date.split('Date')[0].replace(/([A-Z])/g, ' $1').trim());
-    activeTab.classList.add('active-tab');
-  }
-</script>
-
-</body>
-</html>
+<section id="eres">
+  <h2 class="titulo">ERES</h2>
