@@ -3,107 +3,250 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nuestra Gran Historia de Amor</title>
+    <title>Nuestra Historia de Amor</title>
     <style>
         body {
             font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f7f7f7;
+            background-color: #f4f4f4;
+            color: #333;
         }
-        #welcome-section {
-            background-color: #ffcccb;
-            padding: 20px;
+        header {
             text-align: center;
+            background-color: #e0b3e6;
+            padding: 30px;
+            font-size: 2em;
+            color: white;
         }
-        #message-hidden {
-            display: none;
+        nav {
+            text-align: center;
+            background-color: #d1a7d7;
+            padding: 10px;
+        }
+        nav a {
+            margin: 0 15px;
+            color: white;
+            text-decoration: none;
+            font-size: 1.2em;
+        }
+        nav a:hover {
+            text-decoration: underline;
+        }
+        .container {
             padding: 20px;
-            background-color: #f3f3f3;
-            border: 1px solid #ddd;
-            margin-top: 20px;
-        }
-        .message-hidden {
-            display: none;
-        }
-        .quiz-container {
-            margin-top: 20px;
         }
         h2 {
-            color: #d57e7e;
+            color: #993366;
         }
-        .message-hidden p {
-            color: #555;
+        .pestaña {
+            margin-bottom: 30px;
         }
-        .message-hidden h3 {
-            color: #e74c3c;
+        .hidden-content {
+            display: none;
         }
-        #quiz-form {
-            margin: 20px;
+        .hidden-content.active {
+            display: block;
         }
+        .img-container img {
+            max-width: 100%;
+            height: auto;
+        }
+        .text-content {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+        }
+        .text-content ul {
+            list-style-type: none;
+            padding-left: 0;
+        }
+        .text-content ul li {
+            margin-bottom: 10px;
+        }
+        .words-list {
+            font-size: 1.5em;
+            font-weight: bold;
+            text-align: center;
+        }
+        .words-list li {
+            margin: 10px;
+        }
+        .words-list li:nth-child(1) { color: #ff66cc; }
+        .words-list li:nth-child(2) { color: #ff33cc; }
+        .words-list li:nth-child(3) { color: #cc00cc; }
+        .words-list li:nth-child(4) { color: #9900cc; }
+        .words-list li:nth-child(5) { color: #6600cc; }
+        .words-list li:nth-child(6) { color: #3333cc; }
+        .words-list li:nth-child(7) { color: #3366cc; }
+        .words-list li:nth-child(8) { color: #3399cc; }
+        .words-list li:nth-child(9) { color: #33cc99; }
+        .words-list li:nth-child(10) { color: #66cc33; }
+        .words-list li:nth-child(11) { color: #99cc33; }
+        .words-list li:nth-child(12) { color: #cccc33; }
+        .words-list li:nth-child(13) { color: #ffcc33; }
+        .words-list li:nth-child(14) { color: #ffcc66; }
+        .words-list li:nth-child(15) { color: #ff9966; }
+        .words-list li:nth-child(16) { color: #ff6666; }
     </style>
 </head>
 <body>
+    <header>
+        Nuestra gran historia de amor
+    </header>
 
-    <!-- Bienvenida -->
-    <section id="welcome-section">
-        <h1>UN DETALLE PARA EL AMOR DE MI VIDA</h1>
-        <p>15 de julio de 2015</p>
-        <p>¡Bienvenido, amor mío! Este es un regalo especial solo para ti, para que recuerdes lo mucho que te amo y lo importante que eres en mi vida.</p>
-    </section>
+    <nav>
+        <a href="#" onclick="showTab('bienvenida')">Bienvenida</a>
+        <a href="#" onclick="showTab('15-julio')">15 de Julio de 2025</a>
+        <a href="#" onclick="showTab('17-septiembre')">17 de Septiembre de 2015</a>
+        <a href="#" onclick="showTab('6-julio')">6 de Julio de 2024</a>
+        <a href="#" onclick="showTab('29-septiembre')">29 de Septiembre de 2024</a>
+        <a href="#" onclick="showTab('eres')">ERES</a>
+        <a href="#" onclick="showTab('escucha')">Escucha</a>
+        <a href="#" onclick="showTab('momentos')">Algunos de nuestros lindos momentos juntos</a>
+        <a href="#" onclick="showTab('mensaje-oculto')">Mensaje Oculto</a>
+        <a href="#" onclick="showTab('sorpresa')">Sorpresa</a>
+    </nav>
 
-    <!-- Sección Mensaje Oculto -->
-    <section id="message-hidden-section">
-        <div id="quiz-container">
-            <h2>¡Haz el quiz para desbloquear el mensaje especial!</h2>
+    <div class="container">
 
-            <form id="quiz-form">
-                <label for="question-1">1. ¿Cuál fue el primer regalo que te di?</label><br>
-                <input type="radio" name="question-1" value="1" id="q1-option-1"> Flores<br>
-                <input type="radio" name="question-1" value="2" id="q1-option-2"> Chocolates<br>
-                <input type="radio" name="question-1" value="3" id="q1-option-3"> Un peluche<br>
-                <input type="radio" name="question-1" value="4" id="q1-option-4"> Par de tenis<br><br>
+        <div id="bienvenida" class="pestaña hidden-content">
+            <h2>Bienvenida</h2>
+            <p>UN DETALLE PARA EL AMOR DE MI VIDA</p>
+        </div>
 
-                <label for="question-2">2. ¿Qué hicimos la primera vez que salimos o fuimos por algo?</label><br>
-                <input type="radio" name="question-2" value="1" id="q2-option-1"> Ir a Mac<br>
-                <input type="radio" name="question-2" value="2" id="q2-option-2"> Ir por hamburguesas<br>
-                <input type="radio" name="question-2" value="3" id="q2-option-3"> Ir a ver bandas<br>
-                <input type="radio" name="question-2" value="4" id="q2-option-4"> Ir por un helado<br>
-                <input type="radio" name="question-2" value="5" id="q2-option-5"> Nada, ambos nos pusimos nerviosos<br><br>
-
-                <button type="button" onclick="checkAnswers()">Verificar respuestas</button>
-            </form>
-
-            <div id="message" class="message-hidden">
-                <h3>¡Esoooo, mi amor! ❤</h3>
-                <p>Si estás leyendo esto, significa que has recordado muy bien. Quería esconderte algo especial, algo que solo tú pudieras descubrir… porque así eres tú en mi vida: mi tesoro más valioso, mi mejor sorpresa, el regalo más hermoso que la vida me ha dado.</p>
-                <p>Desde el primer momento en que volviste a mi vida, supe que esta vez sería diferente, supe que nuestro destino era estar juntos. Cada instante a tu lado es un regalo, cada risa compartida es un recuerdo que atesoro, y cada mirada tuya es un recordatorio de cuánto te amo. Porque sí, te amo, y no solo con palabras, sino con hechos, con cada gesto, con cada pequeño detalle que nace de lo más profundo de mi corazón.</p>
-                <p>A veces, cuando te miro sin que te des cuenta, me pregunto cómo es posible que alguien tan increíble como tú haya elegido estar conmigo. Eres la persona que ilumina mis días, la que hace que todo tenga sentido, la que me inspira a ser mejor. Contigo, el mundo se siente más cálido, la vida es más ligera, y el amor… el amor es más real que nunca.</p>
-                <p>Quiero que sepas que cada “te amo” que te digo no es solo una frase bonita, es una promesa. Una promesa de que estaré aquí, en los días buenos y en los difíciles, en las risas y en las lágrimas, en cada paso que demos juntos. Porque tú eres mi hogar, mi refugio, mi paz… y mi más grande amor.</p>
-                <p>Así que aquí está mi pequeño mensaje escondido, solo para ti, solo para recordarte algo muy importante: Eres la persona más especial en mi vida, la razón por la que mi corazón late más fuerte y el amor que siempre soñé y sé que tú me entenderás. Necesito mis uvas, mis dulces y mi coquita, pero sobre todo te necesito a ti.</p>
-                <p>Gracias por existir. Gracias por ser tú. Gracias por amarme.</p>
-                <p>Te amo con todo mi corazón, hoy y siempre. ❤✨</p>
+        <div id="15-julio" class="pestaña hidden-content">
+            <h2>15 de Julio de 2025</h2>
+            <div class="text-content">
+                <p>Lo recuerdo como si fuera ayer esa sonrisa hermosa, pantalón cafes, tenis negros, una maleta de 125 libras y tu mami amenazándonos, ese dia marco un antes y un después para mi, no sabia ni lo que era amar o enamorarse pero ahí senti que ese dia había llegado lo que muchos llaman amor, fue la primera vez que supe que existías era como si la perfeccion se plantara frente de mi y aunque no lo sabia en ese momento, tu presencia cambiaria mi vida para siempre, vaya dia aquel no paramos en 4 caminos fuiste a comprar un dulce de uva luego llegamos a toto, te ayude a cargar tu maleta queriendo llamar tu atención, y como si el destino no fuera lo suficientemente caprichoso tuve la dicha de sentarme a la par de ti y hablamos de muchas cosas ahí supe tu intimo amigo que era Oliver jajajaja y que te gustaba o bueno eso me dijiste jajaja de hecho vaya momento humilde e ilusionada pensando que te gustaba que dilemas no que ambos nombres terminen con Ver que la segunda letra sea L jajaja vaya novela tenia yo y de dos segundos me bajaron de mi nuve pero esperaba que ahí era.</p>
             </div>
         </div>
-    </section>
+
+        <div id="17-septiembre" class="pestaña hidden-content">
+            <h2>17 de Septiembre de 2015</h2>
+            <div class="text-content">
+                <p>Aquel dia lo recuerdo como si fuera ayer también recuerdo haber estado en la casa de mi abuelo cenando, y no recuerdo muy bien si ya esperaba un si o porque pero tengo claro que Sali de la cocina porque no podía con la emoción o nerviosismo y ya estando afuera de la casa lei aquel mensaje que cambio mi vida para siempre, "Si de verdad me quieres, podemos intentar algo." Recuerdo haber regresado a cenar todo feliz sabiendo que lo que había esperado se hacia realidad, por fin la señorita Racel Mazariegos futura de Gonzalez era mi novia y eso desencadeno unos sucesos interesantes desde tu papi pensando que le heche algo a los chocolates hasta tu mami diciéndome que mejor hubiera subido un chucho a mi foto de portada, o nuestras primeras salidas y los primeros regalos que te daba Desde entonces, hemos compartido momentos increíbles, y aunque el tiempo pasó, siempre supe que este amor era para siempre. Te amo más de lo que las palabras pueden expresar, mi niña</p>
+            </div>
+            <div class="img-container">
+                <img src="https://github.com/bleis3/Nuestra-historia-de-amor/blob/main/IMG-20241006-WA0002.jpg?raw=true" alt="Imagen 17 de septiembre">
+            </div>
+        </div>
+
+        <div id="6-julio" class="pestaña hidden-content">
+            <h2>6 de Julio de 2024</h2>
+            <div class="text-content">
+                <p>Vaya caprichoso que es el destino y vaya ingenuo fui yo, cuanto me arrepiento no haberte escrito antes y ahorrarnos este tiempo que ha pasado cuantas historias mas tendríamos pero bueno centrémonos en lo lindo, ese dia yo estaba mas nervioso que saber que y tu igual de linda que siempre esas botas te quedaban hermosísimas aunque alguien un dia antes ni me volteo a ver, crei que seria bonito volver a verte y fue asi, me emocione al verte sabes no tienes idea de la cantidad de veces que deseo estar asi cntigo a solas pasar un rato te lo dije en el café, no tienes idea de lo mucho que te quiero mi niño interior volvió a ser feliz, solo pensaba en que hice para enamorarte hace tiempo para volver a hacerlo y ver si podias regresar a mi lado y fue por eso que compre el peluche, pero tenia mil ideas y cosas que decirte en mi mente que no me salieron, cuanto te abrace algo dentro de mi se reconstruia algo era feliz y otra parte se rompia sabiendo que talves no te vería en muchos años o tal vez nunca mas me refiero no preguntamos si el otro tenia a alguien mas, pero si te sirve de algo te quería decir lo que días después te dije, Amor te amo no necesito que sea reciproco solo necesito que lo sepas que te amo que no te he olvidado ni he intentado hacerlo fui un tonto pero no puedo vivir sin ti por favor quédate a mi lado para siempre, pero no me salió ni un te quiero se que el abrazo habran sido 10 segundos pero creeme senti que fueron mil años y no quería parar, senti como si no hubiese pasado el tiempo, disfrute mucho de verte me acorde de todo con tigo ese niño que hoy dia aun se pone nervioso al verte aquel que te tenia te tiene y te tendrá en un pedestal como el centro de su mundo, y que siempre se desvivia trabajada se mataba por verte sonreir y darte algo lindo, al final salió bien pero crei que nunca mas te volvería a ver me hice ideas que no e insisto no es reclamo pero kat que no me pasaba tu dirección no me ayudaba tanto que digamos, por cierto creo que no te lo hedicho hasta hoy pero, Perdon por aquel dia perdón por las veces que lloraste perdón por hacerte sentir mal perdón por ser un tonto y patan con tigo lo siento espero y un dia puedas perdonarme por eso</p>
+            </div>
+            <div class="img-container">
+                <img src="https://github.com/bleis3/Nuestra-historia-de-amor/blob/main/captura%206%20de%20julio%20.jpg?raw=true" alt="Imagen 6 de julio">
+            </div>
+            <div class="img-container">
+                <img src="https://github.com/bleis3/Nuestra-historia-de-amor/blob/main/11111.png?raw=true" alt="Imagen 6 de julio">
+            </div>
+        </div>
+
+        <div id="29-septiembre" class="pestaña hidden-content">
+            <h2>29 de Septiembre de 2024</h2>
+            <div class="text-content">
+                <p>Vaya dia aquel no, ¿te recuerdas? Creo que se ha hecho de mis días favoritos, no sabes cuantos días pensé en como llegar, que decir, que hacer, estabas igual de hermosa que siempre incluso mas, aunque alguien no me dio ni un abrazo, lloro al recordar ese dia, por fin se hizo realidad, que sabia que queria estar contigo y vaya que si lo esta contento, lo recuedo y te quise abrazar y me metí en tu facebook y decí que este sea el día perfecto para que volvamos juntos, mi niña</p>
+            </div>
+        </div>
+
+        <div id="eres" class="pestaña hidden-content">
+            <h2>ERES</h2>
+            <p>Eres la razón por la que me levanto cada mañana. Eres mi motivación, mi amor, mi vida. No hay palabras suficientes para describir lo que siento por ti. Simplemente eres la persona con la que quiero pasar todos los días de mi vida. No solo me haces feliz, sino que me haces sentir como la persona más afortunada del mundo por tenerte en mi vida. Gracias por ser tú, mi amor.</p>
+        </div>
+
+        <div id="escucha" class="pestaña hidden-content">
+            <h2>Escucha</h2>
+            <p>Escucha mi corazón, late por ti. Cuando el amor es verdadero, el alma encuentra su camino. Es por ti que mi mundo tiene color. Si alguna vez dudas de lo que siento, solo escucha lo que no puedo decir con palabras.</p>
+        </div>
+
+        <div id="momentos" class="pestaña hidden-content">
+            <h2>Algunos de nuestros lindos momentos juntos</h2>
+            <div class="text-content">
+                <ul>
+                    <li>Recuerdo la primera vez que tomamos café juntos.</li>
+                    <li>Cuando nos reímos hasta no poder más en esa cita.</li>
+                    <li>Cuando me sorprendiste con esos pequeños detalles que me hicieron sonreír.</li>
+                    <li>Las veces que hablamos toda la noche sobre nuestras vidas.</li>
+                    <li>Y esos pequeños momentos que hacen que el amor crezca cada vez más.</li>
+                </ul>
+            </div>
+        </div>
+
+        <div id="mensaje-oculto" class="pestaña hidden-content">
+            <h2>Mensaje Oculto</h2>
+            <p>Para ver el mensaje oculto, por favor responde correctamente las siguientes preguntas:</p>
+
+            <form id="quiz-form">
+                <p><strong>Pregunta 1: ¿Cuál fue el primer regalo que te di?</strong></p>
+                <label>
+                    <input type="radio" name="question1" value="1"> Flores
+                </label><br>
+                <label>
+                    <input type="radio" name="question1" value="2"> Chocolates
+                </label><br>
+                <label>
+                    <input type="radio" name="question1" value="3"> Un peluche
+                </label><br>
+                <label>
+                    <input type="radio" name="question1" value="4"> Par de tenis
+                </label><br>
+
+                <p><strong>Pregunta 2: ¿Qué hicimos la primera vez que salimos o fuimos por algo?</strong></p>
+                <label>
+                    <input type="radio" name="question2" value="1"> Ir a Mac
+                </label><br>
+                <label>
+                    <input type="radio" name="question2" value="2"> Ir por hamburguesas
+                </label><br>
+                <label>
+                    <input type="radio" name="question2" value="3"> Ir a ver bandas
+                </label><br>
+                <label>
+                    <input type="radio" name="question2" value="4"> Ir por un helado
+                </label><br>
+                <label>
+                    <input type="radio" name="question2" value="5"> Nada, ambos nos pusimos nerviosos
+                </label><br>
+
+                <button type="submit">Enviar respuestas</button>
+            </form>
+
+            <div id="mensaje-completo" class="hidden-content">
+                <h3>Mensaje Completo:</h3>
+                <p>¡Felicidades! Has respondido correctamente, aquí está el mensaje que guardaba para ti:</p>
+                <p><strong>Tu mensaje oculto va aquí...</strong></p>
+            </div>
+        </div>
+
+    </div>
 
     <script>
-        function checkAnswers() {
-            const q1 = document.querySelector('input[name="question-1"]:checked');
-            const q2 = document.querySelector('input[name="question-2"]:checked');
-            
-            if (q1 && q2) {
-                if (q1.value === "3" && q2.value === "4") {
-                    document.getElementById("message").classList.remove("message-hidden");
-                    alert("¡Felicidades! Has desbloqueado el mensaje secreto.");
+        function showTab(tabId) {
+            const tabs = document.querySelectorAll('.pestaña');
+            tabs.forEach(tab => tab.classList.remove('active'));
+            const activeTab = document.getElementById(tabId);
+            activeTab.classList.add('active');
+        }
+
+        document.getElementById("quiz-form").addEventListener("submit", function(event) {
+            event.preventDefault();
+
+            const question1Answer = document.querySelector('input[name="question1"]:checked');
+            const question2Answer = document.querySelector('input[name="question2"]:checked');
+
+            if (question1Answer && question2Answer) {
+                if (question1Answer.value === "3" && question2Answer.value === "4") {
+                    document.getElementById("mensaje-completo").classList.add("active");
                 } else {
-                    alert("Lo siento, las respuestas son incorrectas. Intenta de nuevo.");
+                    alert("¡Responde correctamente ambas preguntas!");
                 }
             } else {
-                alert("Por favor, responde ambas preguntas.");
+                alert("Por favor, responde todas las preguntas.");
             }
-        }
+        });
     </script>
-
 </body>
 </html>
