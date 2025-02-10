@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mi Historia de Amor con Racel</title>
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      background-color: #fef8f2;
+      color: #333;
+      margin: 0;
+      padding: 0;
+    }
+    header {
+      background-color: #ffaad4;
+      color: white;
+      text-align: center;
+      padding: 20px;
+    }
+    .tabs {
+      display: flex;
+      justify-content: center;
+      margin-top: 20px;
+      background-color: #ff699d;
+    }
+    .tab {
+      padding: 10px 20px;
+      cursor: pointer;
+      background-color: #fff;
+      color: #ff699d;
+      border: none;
+      margin: 5px;
+      border-radius: 5px;
+    }
+    .tab:hover {
+      background-color: #ffaad4;
+    }
+    .content {
+      display: none;
+      margin-top: 20px;
+      padding: 20px;
+      background-color: #fff;
+      margin: 0 10px;
+      border-radius: 8px;
+    }
+    .active-tab {
+      background-color: #ff699d;
+      color: white;
+    }
+    .active-content {
+      display: block;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>Mi Historia de Amor con Racel</h1>
+  <p>Un viaje único de amor que nunca termina</p>
+</header>
+
+<div class="tabs">
+  <button class="tab active-tab" onclick="showContent('firstDate')">6 de Julio 2024</button>
+  <button class="tab" onclick="showContent('secondDate')">29 de Noviembre 2024</button>
+  <button class="tab" onclick="showContent('thirdDate')">17 de Septiembre 2015</button>
+  <button class="tab" onclick="showContent('fourthDate')">15 de Julio 2025</button>
+  <button class="tab" onclick="showContent('reunionDate')">14 de Febrero 2025 (Nuevo Comienzo)</button>
+</div>
+
+<div id="firstDate" class="content active-content">
+  <h2>6 de Julio 2024</h2>
+  <p>Este es el día en que decidimos estar juntos para siempre. Desde entonces, todo ha cambiado para mejor. Te amo más cada día, Racel.</p>
+</div>
+
+<div id="secondDate" class="content">
+  <h2>29 de Noviembre 2024</h2>
+  <p>Un día especial para ambos, lleno de nuevas aventuras y recuerdos que no olvidaremos. Mi amor por ti crece cada día más.</p>
+</div>
+
+<div id="thirdDate" class="content">
+  <h2>17 de Septiembre 2015</h2>
+  <p>El primer día que nos conocimos. Desde ese momento, supe que serías una parte fundamental de mi vida. Gracias por existir.</p>
+</div>
+
+<div id="fourthDate" class="content">
+  <h2>15 de Julio 2025</h2>
+  <p>El futuro está lleno de sueños que quiero cumplir a tu lado. Este día marcará un nuevo capítulo de nuestras vidas juntos.</p>
+</div>
+
+<div id="reunionDate" class="content">
+  <h2>14 de Febrero 2025 (Nuevo Comienzo)</h2>
+  <p>Después de todo lo que hemos vivido, hoy será nuestro nuevo primer día. Volveremos a empezar, pero esta vez será para siempre. ¡Te amo más que nunca!</p>
+</div>
+
+<script>
+  function showContent(date) {
+    const contents = document.querySelectorAll('.content');
+    const tabs = document.querySelectorAll('.tab');
+
+    contents.forEach(content => {
+      content.classList.remove('active-content');
+    });
+
+    tabs.forEach(tab => {
+      tab.classList.remove('active-tab');
+    });
+
+    document.getElementById(date).classList.add('active-content');
+    const activeTab = Array.from(tabs).find(tab => tab.innerHTML === date.split('Date')[0].replace(/([A-Z])/g, ' $1').trim());
+    activeTab.classList.add('active-tab');
+  }
+</script>
+
+</body>
+</html>
