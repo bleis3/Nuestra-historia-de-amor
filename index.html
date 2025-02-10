@@ -1,152 +1,296 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Nuestra Gran Historia de Amor</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      background-color: #f4f4f9;
-      color: #333;
-      margin: 0;
-      padding: 0;
-    }
-    header {
-      background-color: #6a4c9c;
-      color: white;
-      text-align: center;
-      padding: 20px;
-    }
-    nav {
-      display: flex;
-      justify-content: center;
-      background-color: #6a4c9c;
-    }
-    nav a {
-      color: white;
-      padding: 14px 20px;
-      text-decoration: none;
-      text-align: center;
-    }
-    nav a:hover {
-      background-color: #5a3b8f;
-    }
-    section {
-      padding: 20px;
-      margin: 20px;
-      background-color: #fff;
-      border-radius: 8px;
-      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    }
-    .titulo {
-      font-size: 24px;
-      color: #6a4c9c;
-    }
-    .textos {
-      font-size: 18px;
-      line-height: 1.6;
-      color: #555;
-    }
-    .fotitos img {
-      width: 100%;
-      max-width: 300px;
-      margin: 10px;
-      border-radius: 8px;
-    }
-    .eres p {
-      font-size: 22px;
-      font-weight: bold;
-      margin: 5px;
-      text-align: center;
-    }
-    .eres p:nth-child(odd) {
-      color: #6a4c9c;
-    }
-    .eres p:nth-child(even) {
-      color: #9b7dbf;
-    }
-    .mensaje-oculto {
-      display: none;
-      background-color: #6a4c9c;
-      color: white;
-      padding: 20px;
-      margin-top: 20px;
-      border-radius: 8px;
-    }
-    .mensaje-oculto.correcto {
-      display: block;
-    }
-    video {
-      width: 100%;
-      max-width: 400px;
-      border-radius: 8px;
-      margin-top: 20px;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nuestra Gran Historia de Amor</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f3f3f3;
+            color: #4a2f6c;
+        }
+
+        h1 {
+            color: #9b3b80;
+            text-align: center;
+        }
+
+        .tab {
+            display: none;
+        }
+
+        .tabs {
+            display: flex;
+            justify-content: center;
+            background-color: #9b3b80;
+            padding: 10px;
+            margin: 0;
+            border-radius: 10px;
+        }
+
+        .tab-button {
+            background-color: #9b3b80;
+            border: none;
+            color: white;
+            padding: 10px;
+            cursor: pointer;
+            text-align: center;
+            margin: 5px;
+            font-size: 16px;
+            border-radius: 5px;
+        }
+
+        .tab-button:hover {
+            background-color: #ad4f99;
+        }
+
+        .tab-content {
+            margin: 20px;
+            background-color: #fff;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .tab img {
+            max-width: 100%;
+            border-radius: 10px;
+        }
+
+        .tab video {
+            max-width: 100%;
+            border-radius: 10px;
+        }
+
+        .tab-button.active {
+            background-color: #7a2d5e;
+        }
+
+        .sorpresa {
+            font-size: 18px;
+            color: #9b3b80;
+            font-weight: bold;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .eres {
+            font-size: 24px;
+            font-weight: bold;
+            color: #9b3b80;
+            text-align: center;
+        }
+
+        .eres p {
+            margin: 5px 0;
+            font-size: 18px;
+            color: #4a2f6c;
+        }
+
+        .question {
+            font-size: 18px;
+            margin: 10px 0;
+            font-weight: bold;
+        }
+
+        .answers {
+            margin: 10px 0;
+        }
+
+        .answers input {
+            margin-right: 10px;
+        }
+
+        .hidden-message {
+            font-size: 20px;
+            color: #4a2f6c;
+            margin-top: 20px;
+            text-align: center;
+            font-weight: bold;
+        }
+
+        .hidden-message span {
+            color: #9b3b80;
+        }
+
+        .audio {
+            text-align: center;
+        }
+    </style>
 </head>
 <body>
 
-<header>
-  <h1>UN DETALLE PARA EL AMOR DE MI VIDA</h1>
-</header>
+    <h1>UN DETALLE PARA EL AMOR DE MI VIDA</h1>
 
-<nav>
-  <a href="#bienvenida">Bienvenida</a>
-  <a href="#15julio2015">15 de Julio 2015</a>
-  <a href="#17septiembre2015">17 de Septiembre 2015</a>
-  <a href="#6julio2024">6 de Julio 2024</a>
-  <a href="#29septiembre2024">29 de Septiembre 2024</a>
-  <a href="#fotitos">Fotitos Nuestras</a>
-  <a href="#eres">ERES</a>
-  <a href="#escucha">Escucha</a>
-  <a href="#mensajeoculto">Mensaje Oculto</a>
-  <a href="#sorpresa">Sorpresa</a>
-</nav>
+    <div class="tabs">
+        <button class="tab-button active" onclick="openTab(event, 'tab1')">15 de Julio 2015</button>
+        <button class="tab-button" onclick="openTab(event, 'tab2')">17 de Septiembre 2015</button>
+        <button class="tab-button" onclick="openTab(event, 'tab3')">6 de Julio 2024</button>
+        <button class="tab-button" onclick="openTab(event, 'tab4')">29 de Septiembre 2024</button>
+        <button class="tab-button" onclick="openTab(event, 'tab5')">Fotitos nuestras</button>
+        <button class="tab-button" onclick="openTab(event, 'tab6')">ERES</button>
+        <button class="tab-button" onclick="openTab(event, 'tab7')">Escucha</button>
+        <button class="tab-button" onclick="openTab(event, 'tab8')">Mensaje Oculto</button>
+        <button class="tab-button" onclick="openTab(event, 'tab9')">Sorpresa</button>
+    </div>
 
-<section id="bienvenida">
-  <h2 class="titulo">Bienvenida</h2>
-  <p class="textos">Bienvenida a nuestra historia de amor, un viaje lleno de recuerdos, risas, y sobre todo, mucho amor. ¡Espero que disfrutes cada momento de esta página tanto como yo disfruto de ti!</p>
-</section>
+    <!-- 15 de Julio de 2015 -->
+    <div id="tab1" class="tab tab-content">
+        <h2>15 de Julio de 2015</h2>
+        <img src="https://github.com/bleis3/Nuestra-historia-de-amor/blob/main/11111.png" alt="15 de julio de 2015">
+        <p>Lo recuerdo como si fuera ayer esa sonrisa hermosa, pantalón cafés, tenis negros, una maleta de 125 libras y tu mami amenazándonos, ese día marcó un antes y un después para mí...</p>
+    </div>
 
-<section id="15julio2015">
-  <h2 class="titulo">15 de Julio 2015</h2>
-  <p class="textos">Lo recuerdo como si fuera ayer, esa sonrisa hermosa, pantalón cafés, tenis negros, una maleta de 125 libras y tu mami amenazándonos. Ese día marcó un antes y un después para mí, no sabía ni lo que era amar o enamorarse, pero ahí sentí que ese día había llegado lo que muchos llaman amor. Fue la primera vez que supe que existías, era como si la perfección se plantara frente a mí, y aunque no lo sabía en ese momento, tu presencia cambiaría mi vida para siempre...</p>
-  <img src="https://raw.githubusercontent.com/bleis3/Nuestra-historia-de-amor/main/11111.png" alt="Foto 15 de Julio 2015">
-</section>
+    <!-- 17 de Septiembre de 2015 -->
+    <div id="tab2" class="tab tab-content">
+        <h2>17 de Septiembre de 2015</h2>
+        <img src="https://github.com/bleis3/Nuestra-historia-de-amor/blob/main/IMG-20241006-WA0002.jpg" alt="17 de septiembre de 2015">
+        <p>Aquel día lo recuerdo como si fuera ayer, también recuerdo haber estado en la casa de mi abuelo cenando, y no recuerdo muy bien si ya esperaba un sí...</p>
+    </div>
 
-<section id="17septiembre2015">
-  <h2 class="titulo">17 de Septiembre 2015</h2>
-  <p class="textos">Aquel día lo recuerdo como si fuera ayer también. Recuerdo haber estado en la casa de mi abuelo cenando... "Si de verdad me quieres, podemos intentar algo". Recuerdo haber regresado a cenar todo feliz sabiendo que lo que había esperado se hacía realidad, por fin la señorita Racel Mazariegos futura de González era mi novia...</p>
-  <img src="https://raw.githubusercontent.com/bleis3/Nuestra-historia-de-amor/main/IMG-20241006-WA0002.jpg" alt="Foto 17 de Septiembre 2015">
-</section>
+    <!-- 6 de Julio 2024 -->
+    <div id="tab3" class="tab tab-content">
+        <h2>6 de Julio 2024</h2>
+        <img src="https://github.com/bleis3/Nuestra-historia-de-amor/blob/main/captura%206%20de%20julio%20.jpg" alt="6 de julio de 2024">
+        <p>Vaya caprichoso que es el destino y vaya ingenuo fui yo, cuánto me arrepiento no haberte escrito antes y ahorrarnos este tiempo que ha pasado...</p>
+    </div>
 
-<section id="6julio2024">
-  <h2 class="titulo">6 de Julio 2024</h2>
-  <p class="textos">Vaya caprichoso que es el destino y vaya ingenuo fui yo, cuántas historias más tendríamos si no hubiera esperado tanto. Ese día yo estaba más nervioso que nunca, pero igual de feliz al verte, sabes, no tienes idea de lo mucho que te quiero...</p>
-  <img src="https://raw.githubusercontent.com/bleis3/Nuestra-historia-de-amor/main/captura%206%20de%20julio%20.jpg" alt="Foto 6 de Julio 2024">
-</section>
+    <!-- 29 de Septiembre 2024 -->
+    <div id="tab4" class="tab tab-content">
+        <h2>29 de Septiembre 2024</h2>
+        <img src="https://github.com/bleis3/Nuestra-historia-de-amor/blob/main/Imagen%20de%20WhatsApp%202024-11-27%20a%20las%2013.48.06_4d77f6fc.jpg" alt="29 de septiembre de 2024">
+        <p>Vaya día aquel no, ¿te recuerdas? Creo que se ha hecho de mis días favoritos, no sabes cuántos días pensé en cómo llegar, qué decir...</p>
+    </div>
 
-<section id="29septiembre2024">
-  <h2 class="titulo">29 de Septiembre 2024</h2>
-  <p class="textos">Vaya día aquel no... Creo que se ha hecho de mis días favoritos. No sabes cuántos días pensé en cómo llegar, qué decir, qué hacer. Estabas igual de hermosa que siempre... Fue la primera vez que salíamos solos, la primera vez que te besaba...</p>
-</section>
+    <!-- Fotitos nuestras -->
+    <div id="tab5" class="tab tab-content">
+        <h2>Fotitos nuestras</h2>
+        <div class="photo-gallery">
+            <img src="https://github.com/bleis3/Nuestra-historia-de-amor/blob/main/fotos%201.jpg" alt="Foto 1">
+            <img src="https://github.com/bleis3/Nuestra-historia-de-amor/blob/main/fotos%202.jpg" alt="Foto 2">
+            <img src="https://github.com/bleis3/Nuestra-historia-de-amor/blob/main/fotos%203.jpg" alt="Foto 3">
+            <img src="https://github.com/bleis3/Nuestra-historia-de-amor/blob/main/fotos%204.jpg" alt="Foto 4">
+            <img src="https://github.com/bleis3/Nuestra-historia-de-amor/blob/main/fotos%205.jpg" alt="Foto 5">
+            <img src="https://github.com/bleis3/Nuestra-historia-de-amor/blob/main/fotos%207.jpg" alt="Foto 6">
+            <video width="320" height="240" controls>
+                <source src="https://github.com/bleis3/Nuestra-historia-de-amor/blob/main/fotos%209.mp4" type="video/mp4">
+            </video>
+        </div>
+    </div>
 
-<section id="fotitos">
-  <h2 class="titulo">Fotitos nuestras</h2>
-  <div class="fotitos">
-    <img src="https://raw.githubusercontent.com/bleis3/Nuestra-historia-de-amor/main/fotos%201.jpg" alt="Foto 1">
-    <img src="https://raw.githubusercontent.com/bleis3/Nuestra-historia-de-amor/main/fotos%202.jpg" alt="Foto 2">
-    <img src="https://raw.githubusercontent.com/bleis3/Nuestra-historia-de-amor/main/fotos%203.jpg" alt="Foto 3">
-    <img src="https://raw.githubusercontent.com/bleis3/Nuestra-historia-de-amor/main/fotos%204.jpg" alt="Foto 4">
-    <img src="https://raw.githubusercontent.com/bleis3/Nuestra-historia-de-amor/main/fotos%205.jpg" alt="Foto 5">
-    <img src="https://raw.githubusercontent.com/bleis3/Nuestra-historia-de-amor/main/fotos%207.jpg" alt="Foto 6">
-    <video controls>
-      <source src="https://raw.githubusercontent.com/bleis3/Nuestra-historia-de-amor/main/fotos%209.mp4" type="video/mp4">
-      Tu navegador no soporta este formato de video.
-    </video>
-  </div>
-</section>
+    <!-- ERES -->
+    <div id="tab6" class="tab tab-content">
+        <h2>ERES</h2>
+        <div class="eres">
+            <p>Mi vida</p>
+            <p>Mi cielo</p>
+            <p>Mi niña</p>
+            <p>Mi reina</p>
+            <p>Mi tesoro</p>
+            <p>Mi razón de ser</p>
+            <p>El motivo de mis alegrías</p>
+            <p>Mi mundo entero</p>
+            <p>Mi universo</p>
+            <p>Mi credo</p>
+            <p>Mi fortaleza</p>
+            <p>Mi debilidad</p>
+            <p>Mi orgullo</p>
+            <p>Mi compañera</p>
+            <p>Mi novia</p>
+            <p>Mi futura esposa</p>
+            <p>Mi confidente</p>
+            <p>Mi pasado</p>
+            <p>Mi presente</p>
+            <p>Mi futuro</p>
+        </div>
+    </div>
 
-<section id="eres">
-  <h2 class="titulo">ERES</h2>
+    <!-- Escucha -->
+    <div id="tab7" class="tab tab-content">
+        <h2>Escucha</h2>
+        <div class="audio">
+            <audio controls>
+                <source src="https://github.com/bleis3/Nuestra-historia-de-amor/blob/main/Grabaci%C3%B3n.m4a" type="audio/m4a">
+                Tu navegador no soporta el formato de audio.
+            </audio>
+        </div>
+    </div>
+
+    <!-- Mensaje Oculto -->
+    <div id="tab8" class="tab tab-content">
+        <h2>Mensaje Oculto</h2>
+        <div class="question">
+            ¿Cual fue el primer regalo que te di?
+        </div>
+        <div class="answers">
+            <input type="radio" id="flores" name="question1" value="flores">
+            <label for="flores">Flores</label>
+            <input type="radio" id="chocolates" name="question1" value="chocolates">
+            <label for="chocolates">Chocolates</label>
+            <input type="radio" id="peluche" name="question1" value="peluche">
+            <label for="peluche">Un peluche</label>
+            <input type="radio" id="tenis" name="question1" value="tenis">
+            <label for="tenis">Par de tenis</label>
+        </div>
+
+        <div class="question">
+            ¿Qué hicimos la primera vez que salimos?
+        </div>
+        <div class="answers">
+            <input type="radio" id="mac" name="question2" value="mac">
+            <label for="mac">Ir a Mac</label>
+            <input type="radio" id="hamburguesas" name="question2" value="hamburguesas">
+            <label for="hamburguesas">Ir por hamburguesas</label>
+            <input type="radio" id="bandas" name="question2" value="bandas">
+            <label for="bandas">Ir a ver bandas</label>
+            <input type="radio" id="helado" name="question2" value="helado">
+            <label for="helado">Ir por un helado</label>
+            <input type="radio" id="nerviosos" name="question2" value="nerviosos">
+            <label for="nerviosos">Nada, ambos nos pusimos nerviosos</label>
+        </div>
+
+        <div class="hidden-message" id="hidden-message">
+            <span>¡Esoooo, mi amor! ❤</span>
+            <p>Si estás leyendo esto, significa que has recordado muy bien...</p>
+        </div>
+    </div>
+
+    <!-- Sorpresa -->
+    <div id="tab9" class="tab tab-content">
+        <h2>Sorpresa</h2>
+        <p>¡Te he preparado algo muy especial, solo para ti!</p>
+    </div>
+
+    <script>
+        function openTab(evt, tabName) {
+            var i, tabContent, tabButtons;
+            tabContent = document.getElementsByClassName("tab");
+            for (i = 0; i < tabContent.length; i++) {
+                tabContent[i].style.display = "none";
+            }
+            tabButtons = document.getElementsByClassName("tab-button");
+            for (i = 0; i < tabButtons.length; i++) {
+                tabButtons[i].classList.remove("active");
+            }
+            document.getElementById(tabName).style.display = "block";
+            evt.currentTarget.classList.add("active");
+        }
+
+        function checkAnswers() {
+            var q1 = document.querySelector('input[name="question1"]:checked');
+            var q2 = document.querySelector('input[name="question2"]:checked');
+            if (q1 && q2) {
+                if (q1.value === "peluche" && q2.value === "helado") {
+                    document.getElementById("hidden-message").style.display = "block";
+                } else {
+                    alert("¡Respuesta incorrecta! Inténtalo nuevamente.");
+                }
+            }
+        }
+    </script>
+
+</body>
+</html>
