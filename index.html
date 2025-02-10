@@ -7,289 +7,103 @@
     <style>
         body {
             font-family: Arial, sans-serif;
-            background-color: #f3f3f3;
-            color: #4a2f6c;
+            margin: 0;
+            padding: 0;
+            background-color: #f7f7f7;
         }
-
-        h1 {
-            color: #9b3b80;
+        #welcome-section {
+            background-color: #ffcccb;
+            padding: 20px;
             text-align: center;
-            margin-top: 30px;
         }
-
-        .tab {
+        #message-hidden {
+            display: none;
+            padding: 20px;
+            background-color: #f3f3f3;
+            border: 1px solid #ddd;
+            margin-top: 20px;
+        }
+        .message-hidden {
             display: none;
         }
-
-        .tabs {
-            display: flex;
-            justify-content: center;
-            background-color: #9b3b80;
-            padding: 10px;
-            margin: 0;
-            border-radius: 10px;
-        }
-
-        .tab-button {
-            background-color: #9b3b80;
-            border: none;
-            color: white;
-            padding: 10px;
-            cursor: pointer;
-            text-align: center;
-            margin: 5px;
-            font-size: 16px;
-            border-radius: 5px;
-        }
-
-        .tab-button:hover {
-            background-color: #ad4f99;
-        }
-
-        .tab-content {
-            margin: 20px;
-            background-color: #fff;
-            border-radius: 10px;
-            padding: 20px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        }
-
-        .tab img {
-            max-width: 100%;
-            border-radius: 10px;
-        }
-
-        .tab video {
-            max-width: 100%;
-            border-radius: 10px;
-        }
-
-        .tab-button.active {
-            background-color: #7a2d5e;
-        }
-
-        .sorpresa {
-            font-size: 18px;
-            color: #9b3b80;
-            font-weight: bold;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .eres {
-            font-size: 24px;
-            font-weight: bold;
-            color: #9b3b80;
-            text-align: center;
-        }
-
-        .eres p {
-            margin: 5px 0;
-            font-size: 18px;
-            color: #4a2f6c;
-        }
-
-        .question {
-            font-size: 18px;
-            margin: 10px 0;
-            font-weight: bold;
-        }
-
-        .answers {
-            margin: 10px 0;
-        }
-
-        .answers input {
-            margin-right: 10px;
-        }
-
-        .hidden-message {
-            font-size: 20px;
-            color: #4a2f6c;
+        .quiz-container {
             margin-top: 20px;
-            text-align: center;
-            font-weight: bold;
         }
-
-        .hidden-message span {
-            color: #9b3b80;
+        h2 {
+            color: #d57e7e;
         }
-
-        .audio {
-            text-align: center;
+        .message-hidden p {
+            color: #555;
+        }
+        .message-hidden h3 {
+            color: #e74c3c;
+        }
+        #quiz-form {
+            margin: 20px;
         }
     </style>
 </head>
 <body>
 
     <!-- Bienvenida -->
-    <h1>UN DETALLE PARA EL AMOR DE MI VIDA</h1>
+    <section id="welcome-section">
+        <h1>UN DETALLE PARA EL AMOR DE MI VIDA</h1>
+        <p>15 de julio de 2015</p>
+        <p>¡Bienvenido, amor mío! Este es un regalo especial solo para ti, para que recuerdes lo mucho que te amo y lo importante que eres en mi vida.</p>
+    </section>
 
-    <div class="tabs">
-        <button class="tab-button active" onclick="openTab(event, 'tab1')">6 de Julio 2024</button>
-        <button class="tab-button" onclick="openTab(event, 'tab2')">17 de Septiembre 2015</button>
-        <button class="tab-button" onclick="openTab(event, 'tab3')">29 de Septiembre 2024</button>
-        <button class="tab-button" onclick="openTab(event, 'tab4')">Fotitos nuestras</button>
-        <button class="tab-button" onclick="openTab(event, 'tab5')">ERES</button>
-        <button class="tab-button" onclick="openTab(event, 'tab6')">Escucha</button>
-        <button class="tab-button" onclick="openTab(event, 'tab7')">Mensaje Oculto</button>
-        <button class="tab-button" onclick="openTab(event, 'tab8')">Sorpresa</button>
-    </div>
+    <!-- Sección Mensaje Oculto -->
+    <section id="message-hidden-section">
+        <div id="quiz-container">
+            <h2>¡Haz el quiz para desbloquear el mensaje especial!</h2>
 
-    <!-- 6 de Julio de 2024 -->
-    <div id="tab1" class="tab tab-content">
-        <h2>6 de Julio 2024</h2>
-        <img src="https://raw.githubusercontent.com/bleis3/Nuestra-historia-de-amor/main/captura%206%20de%20julio%20.jpg" alt="6 de julio de 2024">
-        <img src="https://raw.githubusercontent.com/bleis3/Nuestra-historia-de-amor/main/captura%20julio%202024%202.jpg" alt="6 de julio 2024 Imagen 2">
-        <p>Vaya caprichoso que es el destino y vaya ingenuo fui yo, cuánto me arrepiento no haberte escrito antes y ahorrarnos este tiempo que ha pasado. Este tiempo en el que aprendí a amarte más de lo que jamás pensé que fuera posible. Este tiempo en el que nos conocimos de verdad, no solo de cara, sino con el alma. Lo que siento por ti es mucho más que amor, es una necesidad que tengo de ti en todos los aspectos...</p>
-    </div>
+            <form id="quiz-form">
+                <label for="question-1">1. ¿Cuál fue el primer regalo que te di?</label><br>
+                <input type="radio" name="question-1" value="1" id="q1-option-1"> Flores<br>
+                <input type="radio" name="question-1" value="2" id="q1-option-2"> Chocolates<br>
+                <input type="radio" name="question-1" value="3" id="q1-option-3"> Un peluche<br>
+                <input type="radio" name="question-1" value="4" id="q1-option-4"> Par de tenis<br><br>
 
-    <!-- 17 de Septiembre 2015 -->
-    <div id="tab2" class="tab tab-content">
-        <h2>17 de Septiembre 2015</h2>
-        <img src="https://raw.githubusercontent.com/bleis3/Nuestra-historia-de-amor/main/IMG-20241006-WA0002.jpg" alt="17 de septiembre de 2015">
-        <p>Aquel día lo recuerdo como si fuera ayer, también recuerdo haber estado en la casa de mi abuelo cenando, y no recuerdo muy bien si ya esperaba un sí o si solo era yo dándole vueltas a todo en la cabeza. Lo que sé es que ahí te vi, con tu mirada suave y confiada, sonriendo como si estuviéramos en una película. Fue uno de esos momentos en los que el mundo parecía detenerse y no existiera nada más que tú y yo...</p>
-    </div>
+                <label for="question-2">2. ¿Qué hicimos la primera vez que salimos o fuimos por algo?</label><br>
+                <input type="radio" name="question-2" value="1" id="q2-option-1"> Ir a Mac<br>
+                <input type="radio" name="question-2" value="2" id="q2-option-2"> Ir por hamburguesas<br>
+                <input type="radio" name="question-2" value="3" id="q2-option-3"> Ir a ver bandas<br>
+                <input type="radio" name="question-2" value="4" id="q2-option-4"> Ir por un helado<br>
+                <input type="radio" name="question-2" value="5" id="q2-option-5"> Nada, ambos nos pusimos nerviosos<br><br>
 
-    <!-- 29 de Septiembre 2024 -->
-    <div id="tab3" class="tab tab-content">
-        <h2>29 de Septiembre 2024</h2>
-        <img src="https://raw.githubusercontent.com/bleis3/Nuestra-historia-de-amor/main/Imagen%20de%20WhatsApp%202024-11-27%20a%20las%2013.48.06_4d77f6fc.jpg" alt="29 de septiembre de 2024">
-        <p>Vaya día aquel no, ¿te recuerdas? Creo que se ha hecho de mis días favoritos, no sabes cuántos días pensé en cómo llegar, qué decir. Me acuerdo que estaba tan nervioso porque no sabía si te iba a gustar mi idea, si sería lo que esperabas o si simplemente me habría equivocado en todo. Pero todo salió perfecto, porque al final, era contigo y siempre será así...</p>
-    </div>
+                <button type="button" onclick="checkAnswers()">Verificar respuestas</button>
+            </form>
 
-    <!-- Fotitos nuestras -->
-    <div id="tab4" class="tab tab-content">
-        <h2>Fotitos nuestras</h2>
-        <div class="photo-gallery">
-            <img src="https://raw.githubusercontent.com/bleis3/Nuestra-historia-de-amor/main/fotos%201.jpg" alt="Foto 1">
-            <img src="https://raw.githubusercontent.com/bleis3/Nuestra-historia-de-amor/main/fotos%202.jpg" alt="Foto 2">
-            <img src="https://raw.githubusercontent.com/bleis3/Nuestra-historia-de-amor/main/fotos%203.jpg" alt="Foto 3">
-            <img src="https://raw.githubusercontent.com/bleis3/Nuestra-historia-de-amor/main/fotos%204.jpg" alt="Foto 4">
-            <img src="https://raw.githubusercontent.com/bleis3/Nuestra-historia-de-amor/main/fotos%205.jpg" alt="Foto 5">
-            <img src="https://raw.githubusercontent.com/bleis3/Nuestra-historia-de-amor/main/fotos%207.jpg" alt="Foto 6">
-            <video width="320" height="240" controls>
-                <source src="https://raw.githubusercontent.com/bleis3/Nuestra-historia-de-amor/main/fotos%209.mp4" type="video/mp4">
-            </video>
+            <div id="message" class="message-hidden">
+                <h3>¡Esoooo, mi amor! ❤</h3>
+                <p>Si estás leyendo esto, significa que has recordado muy bien. Quería esconderte algo especial, algo que solo tú pudieras descubrir… porque así eres tú en mi vida: mi tesoro más valioso, mi mejor sorpresa, el regalo más hermoso que la vida me ha dado.</p>
+                <p>Desde el primer momento en que volviste a mi vida, supe que esta vez sería diferente, supe que nuestro destino era estar juntos. Cada instante a tu lado es un regalo, cada risa compartida es un recuerdo que atesoro, y cada mirada tuya es un recordatorio de cuánto te amo. Porque sí, te amo, y no solo con palabras, sino con hechos, con cada gesto, con cada pequeño detalle que nace de lo más profundo de mi corazón.</p>
+                <p>A veces, cuando te miro sin que te des cuenta, me pregunto cómo es posible que alguien tan increíble como tú haya elegido estar conmigo. Eres la persona que ilumina mis días, la que hace que todo tenga sentido, la que me inspira a ser mejor. Contigo, el mundo se siente más cálido, la vida es más ligera, y el amor… el amor es más real que nunca.</p>
+                <p>Quiero que sepas que cada “te amo” que te digo no es solo una frase bonita, es una promesa. Una promesa de que estaré aquí, en los días buenos y en los difíciles, en las risas y en las lágrimas, en cada paso que demos juntos. Porque tú eres mi hogar, mi refugio, mi paz… y mi más grande amor.</p>
+                <p>Así que aquí está mi pequeño mensaje escondido, solo para ti, solo para recordarte algo muy importante: Eres la persona más especial en mi vida, la razón por la que mi corazón late más fuerte y el amor que siempre soñé y sé que tú me entenderás. Necesito mis uvas, mis dulces y mi coquita, pero sobre todo te necesito a ti.</p>
+                <p>Gracias por existir. Gracias por ser tú. Gracias por amarme.</p>
+                <p>Te amo con todo mi corazón, hoy y siempre. ❤✨</p>
+            </div>
         </div>
-    </div>
-
-    <!-- ERES -->
-    <div id="tab5" class="tab tab-content">
-        <h2>ERES</h2>
-        <div class="eres">
-            <p>Mi vida</p>
-            <p>Mi cielo</p>
-            <p>Mi niña</p>
-            <p>Mi reina</p>
-            <p>Mi tesoro</p>
-            <p>Mi razón de ser</p>
-            <p>El motivo de mis alegrías</p>
-            <p>Mi mundo entero</p>
-            <p>Mi universo</p>
-            <p>Mi credo</p>
-            <p>Mi fortaleza</p>
-            <p>Mi debilidad</p>
-            <p>Mi orgullo</p>
-            <p>Mi compañera</p>
-            <p>Mi novia</p>
-            <p>Mi futura esposa</p>
-            <p>Mi confidente</p>
-            <p>Mi pasado</p>
-            <p>Mi presente</p>
-            <p>Mi futuro</p>
-        </div>
-    </div>
-
-    <!-- Escucha -->
-    <div id="tab6" class="tab tab-content">
-        <h2>Escucha</h2>
-        <div class="audio">
-            <audio controls>
-                <source src="https://raw.githubusercontent.com/bleis3/Nuestra-historia-de-amor/main/Grabaci%C3%B3n.m4a" type="audio/m4a">
-                Tu navegador no soporta el formato de audio.
-            </audio>
-        </div>
-    </div>
-
-    <!-- Mensaje Oculto -->
-    <div id="tab7" class="tab tab-content">
-        <h2>Mensaje Oculto</h2>
-        <div class="question">
-            ¿Cual fue el primer regalo que te di?
-        </div>
-        <div class="answers">
-            <input type="radio" id="flores" name="question1" value="flores">
-            <label for="flores">Flores</label>
-            <input type="radio" id="chocolates" name="question1" value="chocolates">
-            <label for="chocolates">Chocolates</label>
-            <input type="radio" id="peluche" name="question1" value="peluche">
-            <label for="peluche">Un peluche</label>
-            <input type="radio" id="tenis" name="question1" value="tenis">
-            <label for="tenis">Par de tenis</label>
-        </div>
-
-        <div class="question">
-            ¿Qué hicimos la primera vez que salimos?
-        </div>
-        <div class="answers">
-            <input type="radio" id="mac" name="question2" value="mac">
-            <label for="mac">Ir a Mac</label>
-            <input type="radio" id="hamburguesas" name="question2" value="hamburguesas">
-            <label for="hamburguesas">Ir por hamburguesas</label>
-            <input type="radio" id="bandas" name="question2" value="bandas">
-            <label for="bandas">Ir a ver bandas</label>
-            <input type="radio" id="helado" name="question2" value="helado">
-            <label for="helado">Ir por un helado</label>
-            <input type="radio" id="nerviosos" name="question2" value="nerviosos">
-            <label for="nerviosos">Nada, ambos nos pusimos nerviosos</label>
-        </div>
-
-        <div class="hidden-message" id="hidden-message">
-            <span>¡Esoooo, mi amor! ❤</span>
-            <p>¡Has acertado! El primer regalo fueron un par de flores hermosas, y la primera vez que salimos fue por un helado. ¡Te quiero mucho!</p>
-        </div>
-    </div>
-
-    <!-- Sorpresa -->
-    <div id="tab8" class="tab tab-content">
-        <h2>Sorpresa</h2>
-        <p>¡Te he preparado algo muy especial, solo para ti!</p>
-        <p>Recuerda que siempre te pienso, y cada detalle es un reflejo de lo que eres para mí, y todo lo que quiero hacer por ti. Te amo mucho. Esta sorpresa es un pequeño recordatorio de lo especial que eres en mi vida.</p>
-    </div>
+    </section>
 
     <script>
-        function openTab(evt, tabName) {
-            var i, tabContent, tabButtons;
-            tabContent = document.getElementsByClassName("tab");
-            for (i = 0; i < tabContent.length; i++) {
-                tabContent[i].style.display = "none";
-            }
-            tabButtons = document.getElementsByClassName("tab-button");
-            for (i = 0; i < tabButtons.length; i++) {
-                tabButtons[i].className = tabButtons[i].className.replace(" active", "");
-            }
-            document.getElementById(tabName).style.display = "block";
-            evt.currentTarget.className += " active";
-        }
-
-        // Función para mostrar el mensaje oculto si la respuesta es correcta
-        document.querySelectorAll('.answers input').forEach(input => {
-            input.addEventListener('change', function() {
-                const correctAnswer1 = 'flores';
-                const correctAnswer2 = 'helado';
-                let answer1 = document.querySelector('input[name="question1"]:checked')?.value;
-                let answer2 = document.querySelector('input[name="question2"]:checked')?.value;
-                
-                if (answer1 === correctAnswer1 && answer2 === correctAnswer2) {
-                    document.getElementById('hidden-message').style.display = 'block';
+        function checkAnswers() {
+            const q1 = document.querySelector('input[name="question-1"]:checked');
+            const q2 = document.querySelector('input[name="question-2"]:checked');
+            
+            if (q1 && q2) {
+                if (q1.value === "3" && q2.value === "4") {
+                    document.getElementById("message").classList.remove("message-hidden");
+                    alert("¡Felicidades! Has desbloqueado el mensaje secreto.");
                 } else {
-                    document.getElementById('hidden-message').style.display = 'none';
+                    alert("Lo siento, las respuestas son incorrectas. Intenta de nuevo.");
                 }
-            });
-        });
+            } else {
+                alert("Por favor, responde ambas preguntas.");
+            }
+        }
     </script>
+
 </body>
 </html>
